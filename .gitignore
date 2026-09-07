@@ -1,0 +1,31 @@
+# --- Build output & archives ---
+/dist/
+/fm-site-hosting-upload.zip
+*.zip
+*.tar.gz
+
+# --- Sensitive data (never commit) ---
+/FM_Leads_Tracker.xlsx
+*.xlsx
+
+# --- Local tooling / auth ---
+/.netlify/
+*.local
+.env
+.env.*
+.envrc
+
+# --- Apps Script (may contain credentials / deployment ids) ---
+/apps_script/
+
+# --- OS noise ---
+.DS_Store
+Thumbs.db
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+
+# --- Netlify CLI user config ---
+netlify/state.json

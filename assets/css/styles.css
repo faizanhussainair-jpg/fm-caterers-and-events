@@ -1,0 +1,352 @@
+/* ============================================================
+   FM Caterers & Events — Design System
+   Inspired by Calder Clark (editorial luxury) + Mindy Weiss (premium)
+   ============================================================ */
+
+:root {
+  /* Brand palette from FM blueprint */
+  --navy: #1C2B45;
+  --navy-deep: #14203A;
+  --gold: #C99A3E;
+  --gold-light: #D8B268;
+  --ivory: #FAF3E7;
+  --blush: #F4C9C0;
+  --slate: #3B5B7A;
+  --charcoal: #2B2B2B;
+  --cream: #FFFDF7;
+  --white: #FFFFFF;
+
+  /* Type scale */
+  --h1: clamp(2.2rem, 5vw, 3.4rem);
+  --h2: clamp(1.7rem, 3.6vw, 2.5rem);
+  --h3: 1.25rem;
+  --lead: 1.15rem;
+  --body: 1rem;
+  --label: 0.78rem;
+
+  /* Spacing rhythm */
+  --section: clamp(4rem, 9vw, 7rem);
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+
+  /* Rules */
+  --hairline: 1px solid rgba(28, 43, 69, 0.14);
+  --gold-rule: 1px solid var(--gold);
+}
+
+/* ---------- Reset & base ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  color: var(--charcoal);
+  background: var(--ivory);
+  line-height: 1.7;
+  font-size: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: 0.3px;
+}
+
+.serif-emphasis { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 500; color: var(--slate); }
+
+img { display: block; width: 100%; height: auto; object-fit: cover; }
+
+a { color: inherit; text-decoration: none; }
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.95rem 2.1rem;
+  border: 1.5px solid var(--navy);
+  font-family: "Lato", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--navy);
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+.btn:hover { background: var(--navy); color: var(--ivory); }
+.btn-gold { border-color: var(--gold); color: var(--gold); }
+.btn-gold:hover { background: var(--gold); color: var(--navy); }
+.btn-solid { background: var(--navy); color: var(--ivory); }
+.btn-solid:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+
+/* ---------- Labels / section headers ---------- */
+.eyebrow {
+  font-family: "Lato", sans-serif;
+  font-size: var(--label);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1rem;
+}
+.gold-rule {
+  width: 56px; height: 2px; background: var(--gold);
+  border: none; margin: 0 auto 1.6rem auto;
+}
+.rule-left { margin-left: 0; }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(250, 243, 231, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: var(--hairline);
+}
+.nav-wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 80px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand img { width: 44px; height: 44px; object-fit: contain; }
+.brand-text { font-family: "Cormorant Garamond", serif; font-weight: 700; font-size: 1.5rem; color: var(--navy); letter-spacing: 2px; }
+.brand-text span { display: block; font-family: "Lato", sans-serif; font-size: 0.55rem; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+
+.nav-list { display: flex; list-style: none; gap: 2.2rem; }
+.nav-list a {
+  font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--navy); font-weight: 700; padding-bottom: 4px; position: relative;
+}
+.nav-list a::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px;
+  background: var(--gold); transition: width 0.3s ease;
+}
+.nav-list a:hover::after, .nav-list a.active::after { width: 100%; }
+
+.nav-cta { font-size: 0.78rem; letter-spacing: 1.5px; padding: 0.7rem 1.4rem; }
+
+/* Mobile nav */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { width: 26px; height: 2px; background: var(--navy); display: block; }
+
+@media (max-width: 900px) {
+  .nav-toggle { display: flex; }
+  .nav-list {
+    position: fixed; top: 80px; left: 0; right: 0; z-index: 999;
+    background: var(--ivory); flex-direction: column; gap: 0;
+    padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+  }
+  .nav-list.open { max-height: 70vh; border-bottom: var(--hairline); }
+  .nav-list li { border-bottom: var(--hairline); }
+  .nav-list a { display: block; padding: 1.1rem var(--gutter); }
+  .nav-cta { display: none; }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer { background: var(--navy); color: rgba(250,243,231,0.85); padding: 4rem 0 2rem; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; }
+.footer-brand { font-family: "Cormorant Garamond", serif; font-size: 1.6rem; color: var(--ivory); letter-spacing: 2px; margin-bottom: 0.75rem; }
+.footer-brand span { font-family: "Lato", sans-serif; font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); display: block; }
+.footer-col h4 { font-family: "Lato", sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; font-weight: 700; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.6rem; font-size: 0.92rem; }
+.footer-col a:hover { color: var(--gold-light); }
+.footer-bottom { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(250,243,231,0.15); font-size: 0.78rem; text-align: center; letter-spacing: 1px; color: rgba(250,243,231,0.55); }
+
+@media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* ============================================================
+   HERO (home) — full-bleed with subtle scrim
+   ============================================================ */
+.hero {
+  position: relative; min-height: 88vh;
+  display: flex; align-items: flex-end; justify-content: center;
+  overflow: hidden;
+}
+.hero-media { position: absolute; inset: 0; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.hero-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,32,58,0.18) 0%, rgba(20,32,58,0.35) 55%, rgba(20,32,58,0.82) 100%); }
+.hero--dark .hero-scrim { background: linear-gradient(180deg, rgba(20,32,58,0.5), rgba(20,32,58,0.62)); }
+.hero-content {
+  position: relative; z-index: 2; text-align: center; color: var(--ivory);
+  padding: 4rem var(--gutter) 3.5rem; max-width: 800px; margin: 0 auto;
+}
+.hero-eyebrow { color: var(--gold-light); font-size: var(--label); letter-spacing: 4px; text-transform: uppercase; font-weight: 700; margin-bottom: 1.2rem; }
+.hero-title { color: var(--ivory); font-size: clamp(2.6rem, 7vw, 4.6rem); margin-bottom: 1.2rem; font-weight: 500; }
+.hero-sub { color: rgba(250,243,231,0.92); font-size: 1.08rem; max-width: 560px; margin: 0 auto 1.8rem; font-family: "Cormorant Garamond", serif; font-style: italic; }
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero .btn { border-color: var(--ivory); color: var(--ivory); }
+.hero .btn:hover { background: var(--ivory); color: var(--navy); }
+.hero .btn-gold { border-color: var(--gold); color: var(--gold); }
+.hero .btn-gold:hover { background: var(--gold); color: var(--navy); }
+
+/* Full-height scrolled hero variant */
+.hero--short { min-height: 52vh; }
+
+/* ============================================================
+   SECTION / LAYOUT PATTERNS — structured symmetry
+   ============================================================ */
+.section { padding: var(--section) 0; }
+.section--navy { background: var(--navy); color: rgba(250,243,231,0.9); }
+.section--navy h1, .section--navy h2, .section--navy h3 { color: var(--ivory); }
+.section--cream { background: var(--cream); }
+.section--blush { background: var(--blush); }
+
+.section-head { text-align: center; max-width: 680px; margin: 0 auto 3rem; }
+.section-head.left { text-align: left; margin-left: 0; }
+
+/* Two-column intro — mirror symmetry */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); align-items: center; }
+.split .label h3 { margin-bottom: 1rem; }
+@media (max-width: 800px) { .split { grid-template-columns: 1fr; } .split--flip .split-media { order: -1; } }
+.split--flip .split-media { order: 2; }
+
+/* ============================================================
+   PRINCIPLES / VALUES — 3 up
+   ============================================================ */
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center; }
+.principles .principle { padding: 2rem 1rem; }
+.principles .num {
+  font-family: "Cormorant Garamond", serif; font-size: 2.6rem; color: var(--gold); font-weight: 600; display: block; margin-bottom: 0.6rem;
+}
+.principles .principle h3 { margin-bottom: 0.7rem; }
+.principles .principle p { font-size: 0.95rem; color: var(--slate); font-family: "Cormorant Garamond", serif; font-style: italic; }
+.section--navy .principles .num { color: var(--gold-light); }
+.section--navy .principles .principle h3 { color: var(--ivory); }
+.section--navy .principles .principle p { color: rgba(250,243,231,0.9); font-size: 1rem; }
+.section--navy .principles .principle { border-top: 1px solid rgba(250,243,231,0.35); }
+@media (max-width: 800px) { .principles { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   IMAGE GRIDS — symmetric for structured presentation
+   ============================================================ */
+.img-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.img-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.img-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.img-grid-2 img { aspect-ratio: 1 / 1; object-fit: cover; }
+.img-grid-3 img { aspect-ratio: 1 / 1; object-fit: cover; }
+.img-grid-4 img { aspect-ratio: 1 / 1; object-fit: cover; }
+.img-grid-3.portrait img { aspect-ratio: 3 / 4; }
+.img-grid-3.portrait { gap: 1rem; }
+@media (max-width: 800px) { .img-grid-3 { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px) { .img-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .img-grid-2, .img-grid-3, .img-grid-4 { grid-template-columns: 1fr; } }
+
+.figure figure { margin-bottom: 0; }
+.figure figcaption { font-size: 0.8rem; letter-spacing: 1px; color: var(--slate); margin-top: 0.7rem; text-align: center; font-style: italic; font-family: "Cormorant Garamond", serif; }
+
+/* ============================================================
+   USP JUMP / STORY SNIPPET
+   ============================================================ */
+.usp-band {
+  background: var(--navy); color: var(--ivory); padding: var(--section) 0; text-align: center; position: relative;
+}
+.usp-band .eyebrow { color: var(--gold-light); }
+.usp-band h2 { color: var(--ivory); }
+.usp-band .bigquote { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: clamp(1.4rem, 3vw, 2rem); max-width: 760px; margin: 0 auto 1.2rem; line-height: 1.5; color: rgba(250,243,231,0.95); }
+.usp-band p { color: rgba(250,243,231,0.8); max-width: 640px; margin: 0 auto 2rem; font-size: 1rem; }
+
+/* ============================================================
+   MENU / VALUES LIST — structured
+   ============================================================ */
+.value-list { list-style: none; margin-top: 1.5rem; }
+.value-list li {
+  display: flex; align-items: flex-start; gap: 1rem; padding: 1.1rem 0; border-bottom: var(--hairline);
+}
+.value-list li:last-child { border-bottom: none; }
+.value-list .tick { color: var(--gold); font-size: 1.3rem; line-height: 1.3; font-weight: 700; }
+.value-list li strong { font-family: "Cormorant Garamond", serif; font-size: 1.2rem; color: var(--navy); font-weight: 600; display: block; }
+.value-list li p { font-size: 0.95rem; color: var(--slate); }
+
+/* ============================================================
+   STATS
+   ============================================================ */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+.stats .stat .num { font-family: "Cormorant Garamond", serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--gold); font-weight: 600; }
+.stats .stat .lbl { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--slate); margin-top: 0.4rem; }
+@media (max-width: 800px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonial {
+  text-align: center; max-width: 720px; margin: 0 auto;
+}
+.testimonial blockquote { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: clamp(1.2rem, 2.6vw, 1.6rem); color: var(--navy); line-height: 1.55; }
+.testimonial .attr { margin-top: 1.4rem; font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+
+/* ============================================================
+   CONTACT / LEAD FORM
+   ============================================================ */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--gutter); align-items: start; }
+@media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
+
+.form-card { background: var(--cream); border: var(--hairline); padding: 2.4rem; }
+.form-card h3 { margin-bottom: 1.6rem; }
+.form-row { margin-bottom: 1.3rem; }
+.form-row label { display: block; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--slate); font-weight: 700; margin-bottom: 0.5rem; }
+.form-row input, .form-row select, .form-row textarea {
+  width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(28,43,69,0.25);
+  background: var(--white); font-family: "Lato", sans-serif; font-size: 0.95rem; color: var(--charcoal);
+}
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus { outline: none; border-color: var(--gold); }
+.form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+.contact-row { display: flex; align-items: center; gap: 1.2rem; padding: 1.3rem 0; border-bottom: var(--hairline); }
+.contact-row:last-child { border-bottom: none; }
+.contact-row .ico { font-size: 1.3rem; color: var(--gold); width: 2rem; text-align: center; }
+.contact-row .lbl { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--slate); font-weight: 700; }
+.contact-row .val { font-size: 1.02rem; color: var(--navy); font-weight: 700; }
+
+.follow-icons { display: flex; gap: 1rem; margin-top: 1.5rem; }
+.follow-icons a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--navy); color: var(--navy); font-size: 0.8rem; }
+.follow-icons a:hover { background: var(--navy); color: var(--ivory); }
+
+/* Form success / error messages */
+.form-success { display: none; padding: 1.5rem; background: rgba(201,154,62,0.12); border: 1px solid var(--gold); color: var(--navy); font-weight: 600; text-align: center; margin-top: 1rem; }
+.form-error { display: none; padding: 1.5rem; background: rgba(190,58,58,0.08); border: 1px solid rgba(190,58,58,0.4); color: #8e2424; font-weight: 600; text-align: center; margin-top: 1rem; }
+
+/* ============================================================
+   PAGE HERO (interior) — structured title band
+   ============================================================ */
+.page-head { text-align: center; padding: clamp(4rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 3.5rem); max-width: 820px; margin: 0 auto; }
+.page-head h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); margin-bottom: 1rem; }
+.page-head .lead-italic { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.3rem; color: var(--slate); margin-bottom: 1.2rem; }
+
+/* ============================================================
+   REVEAL ON SCROLL
+   ============================================================ */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   WHY-FM VIGNETTES — ultra-text-light, number-led editorial
+   ============================================================ */
+.why-vignette { display: grid; grid-template-columns: 1fr 1fr; gap:0; }
+.why-vignette .why-big { display:flex; flex-direction:column; justify-content:center; padding: clamp(3rem,8vw,6rem) var(--gutter); }
+.why-vignette .why-label {
+  font-family: "Cormorant Garamond", serif; font-weight: 600; line-height: 1;
+  display: block; margin-bottom: 0.5rem;
+}
+.why-vignette .why-num { font-size: clamp(4rem,10vw,8rem); font-weight: 700; color: var(--gold); line-height: 0.9; }
+.why-vignette .why-word { font-size: clamp(1.8rem,4vw,3.2rem); color: var(--ivory); }
+.why-vignette .why-copy { display:flex; flex-direction:column; justify-content:center; padding: clamp(3rem,8vw,6rem) var(--gutter); }
+.why-vignette .why-copy .why-peek { font-family: "Lato", sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.why-vignette .why-copy p { font-size: 1.05rem; line-height: 1.65; }
+.why-vignette.navy .why-big { background: var(--navy-deep); color: var(--ivory); }
+.why-vignette.navy .why-copy { background: var(--ivory); }
+.why-vignette.ivory .why-big { background: var(--ivory); }
+.why-vignette.ivory .why-copy { background: var(--navy); color: var(--ivory); }
+.why-vignette.ivory .why-copy p { color: rgba(250,243,231,0.85); }
+.why-vignette.ivory .why-word { color: var(--navy); }
+@media (max-width: 800px) { .why-vignette { grid-template-columns: 1fr; } }

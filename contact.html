@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | FM Caterers &amp; Events — Lucknow</title>
+  <meta name="description" content="Plan your wedding, institutional event, or celebration with FM Caterers. Tell us your details and we'll follow up personally.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <!-- ================= HEADER / NAV (shared) ================= -->
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/FM Logo.png" alt="FM Caterers &amp; Events">
+      <span class="brand-text">FM<span>caterers &amp; events · since 1994</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-list" id="navList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn nav-cta" href="contact.html">Enquire</a>
+  </div>
+</header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="container page-head">
+      <span class="eyebrow">Let's Talk</span>
+      <h1>Plan Your Event</h1>
+      <p class="lead-italic">Tell us a little about your celebration — we'll take care of the rest.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT GRID ===== -->
+  <section class="section" style="padding-top:2rem;">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact details -->
+        <div class="reveal">
+          <span class="eyebrow rule-left">Reach Us Directly</span>
+          <h2 style="margin-bottom:1.5rem;">We'd love to hear from you</h2>
+
+          <div class="contact-row">
+            <span class="ico"><i class="bi bi-telephone-fill"></i></span>
+            <div>
+              <div class="lbl">Call or WhatsApp</div>
+              <div class="val"><a href="tel:+919415004678">+91 94150 04678</a></div>
+              <div class="val"><a href="tel:+919919032259">+91 99190 32259</a></div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <span class="ico"><i class="bi bi-envelope-fill"></i></span>
+            <div>
+              <div class="lbl">Email</div>
+              <div class="val"><a href="mailto:fmcateringsolutions@gmail.com">fmcateringsolutions@gmail.com</a></div>
+              <a class="btn btn-gold" style="border-color:var(--gold);color:var(--gold); margin-top:.8rem; padding:.6rem 1.2rem;" href="mailto:fmcateringsolutions@gmail.com?subject=Event%20Enquiry%20%E2%80%94%20FM%20Caterers"><i class="bi bi-envelope-paper"></i>&nbsp; Send an Email</a>
+            </div>
+          </div>
+
+          <div class="contact-row" style="border-bottom:none;">
+            <span class="ico"><i class="bi bi-geo-alt-fill"></i></span>
+            <div>
+              <div class="lbl">Location</div>
+              <div class="val">Jopling Road, Lucknow</div>
+            </div>
+          </div>
+
+          <div class="follow-icons">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Lead form -->
+        <div class="form-card reveal">
+          <h3>Request a Follow-Up</h3>
+          <p style="font-size:.95rem; color:var(--slate); margin-bottom:1.6rem;">Share your name, number, and the size of your event. We'll get back to you personally.</p>
+          <form id="leadForm" novalidate>
+            <div class="form-2col">
+              <div class="form-row">
+                <label for="leadName">Your Name *</label>
+                <input type="text" id="leadName" name="name" required placeholder="Full name">
+              </div>
+              <div class="form-row">
+                <label for="leadPhone">Phone Number *</label>
+                <input type="tel" id="leadPhone" name="phone" required placeholder="+91">
+              </div>
+            </div>
+            <div class="form-2col">
+              <div class="form-row">
+                <label for="leadGuests">Approx. Number of Guests</label>
+                <select id="leadGuests" name="guests">
+                  <option value="">Select range</option>
+                  <option>Under 100</option>
+                  <option>100 – 250</option>
+                  <option>250 – 500</option>
+                  <option>500 – 1000</option>
+                  <option>1000+</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="leadEventType">Event Type</label>
+                <select id="leadEventType" name="eventType">
+                  <option value="">Select type</option>
+                  <option>Wedding</option>
+                  <option>Reception</option>
+                  <option>Corporate / Institutional</option>
+                  <option>Private Celebration</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="leadNote">About Your Event</label>
+              <textarea id="leadNote" name="note" rows="4" placeholder="Wedding, institutional event, or private celebration..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-solid" style="width:100%;">Send My Enquiry</button>
+            <div class="form-success" id="formSuccess">Thank you! We'll follow up with you shortly.</div>
+            <div class="form-error" id="formError">Something went wrong. Please email us directly or call +91 94150 04678.</div>
+            <p style="font-size:.78rem; color:var(--slate); margin-top:1rem; text-align:center;">Prefer to talk now? Call <a href="tel:+919415004678" style="color:var(--navy); font-weight:700;">+91 94150 04678</a></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BAND ===== -->
+  <section class="section section--navy" style="padding-top:4rem;padding-bottom:5rem;">
+    <div class="container" style="text-align:center; max-width:760px;">
+      <span class="eyebrow">Since 1994</span>
+      <h2 style="margin-bottom:1rem;">It was never about the venue. It was always about who's at the table.</h2>
+      <p style="color:rgba(250,243,231,0.85);">Let's set yours.</p>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER (shared) ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">FM Caterers &amp; Events
+        <span>Not just catering. An experience your guests remember.</span>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reach Us</h4>
+        <ul>
+          <li><a href="tel:+919415004678">+91 94150 04678</a></li>
+          <li><a href="tel:+919919032259">+91 99190 32259</a></li>
+          <li><a href="mailto:fmcateringsolutions@gmail.com">fmcateringsolutions@gmail.com</a></li>
+          <li>Jopling Road, Lucknow</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 FM Caterers &amp; Events · Lucknow · Since 1994</div>
+  </div>
+</footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
