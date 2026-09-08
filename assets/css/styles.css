@@ -411,3 +411,87 @@ a { color: inherit; text-decoration: none; }
 .cta--blush { background: var(--blush); }
 .cta--blush h2 { color: var(--navy); }
 .cta--deep { background: var(--navy-deep); }
+
+/* ============================================================
+   GOOGLE REVIEWS — credibility + review CTA
+   ============================================================ */
+.reviews-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); align-items: stretch; }
+@media (max-width: 800px) { .reviews-wrap { grid-template-columns: 1fr; } }
+
+.review-card { background: var(--cream); border: var(--hairline); padding: 2.2rem 2rem; display: flex; flex-direction: column; justify-content: center; }
+.review-card .stars { display: flex; gap: 0.25rem; color: var(--gold); font-size: 1.05rem; margin-bottom: 1rem; }
+.review-card blockquote { font-family: var(--font-serif); font-style: italic; font-size: 1.18rem; line-height: 1.55; color: var(--navy); margin-bottom: 1.2rem; }
+.review-card .attr { display: flex; align-items: center; gap: 0.8rem; }
+.review-card .attr .name { font-weight: 700; color: var(--navy); font-size: 0.95rem; }
+.review-card .attr .src { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--slate); }
+
+/* Google rating badge */
+.g-rating { display: flex; align-items: center; justify-content: center; gap: 0.9rem; padding: 1rem 1.4rem; border: 1px solid rgba(28,43,69,0.18); background: var(--cream); }
+.g-rating .g-logo { font-family: var(--font-sans); font-weight: 900; font-size: 1.05rem; color: var(--navy); display: flex; align-items: center; gap: 0.4rem; }
+.g-rating .g-logo .g { color: var(--gold); }
+.g-rating .g-score { font-family: var(--font-serif); font-weight: 700; font-size: 2rem; color: var(--navy); line-height: 1; }
+.g-rating .g-meta { text-align: left; }
+.g-rating .g-stars { color: var(--gold); font-size: 0.95rem; letter-spacing: 2px; }
+.g-rating .g-count { font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--slate); }
+
+/* QR + review CTA */
+.qr-band { display: grid; grid-template-columns: auto 1fr; gap: 1.8rem; align-items: center; background: var(--navy); padding: 2.2rem; color: var(--ivory); }
+.qr-band img { width: 140px; height: 140px; object-fit: contain; background: var(--ivory); padding: 0.4rem; }
+.qr-band h3 { color: var(--ivory); margin-bottom: 0.6rem; }
+.qr-band p { color: var(--ink-navy); font-size: 0.95rem; max-width: 38ch; }
+.qr-band .qr-link { display: inline-block; margin-top: 1rem; font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); font-weight: 700; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+@media (max-width: 560px) { .qr-band { grid-template-columns: 1fr; text-align: center; justify-items: center; } .qr-band p { margin: 0 auto; } }
+
+/* ============================================================
+   GRAND BAND — Qawwali & the performing arts
+   ============================================================ */
+.grand { background: var(--navy-deep); color: var(--ivory); position: relative; overflow: hidden; }
+.grand-sheen { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 120%, rgba(201,154,62,0.22) 0%, rgba(20,32,58,0) 60%); }
+.grand .container { position: relative; }
+.grand .grand-eyebrow { font-size: 0.72rem; letter-spacing: 5px; text-transform: uppercase; color: var(--gold-light); font-weight: 700; text-align: center; margin-bottom: 1.6rem; }
+.grand h2 { color: var(--ivory); text-align: center; }
+.grand .bigquote { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.5rem, 3.2vw, 2.2rem); line-height: 1.4; max-width: 860px; margin: 1.8rem auto 1.4rem; color: var(--ink-navy); text-align: center; }
+.grand .grand-sub { max-width: 640px; margin: 0 auto 2rem; text-align: center; color: var(--ink-navy-soft); font-size: 1rem; }
+.grand .grand-actions { text-align: center; }
+
+/* Qawwali detail strip */
+.qawwali-band { margin-top: clamp(2.5rem, 6vw, 4rem); }
+.qawwali-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: center; border-top: 1px solid var(--ink-navy-rule); padding-top: 2.2rem; }
+.qawwali-meta .qm { }
+.qawwali-meta .qm .num { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 700; color: var(--gold-light); line-height: 1; display: block; margin-bottom: 0.4rem; }
+.qawwali-meta .qm .lbl { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-navy-soft); }
+@media (max-width: 800px) { .qawwali-meta { grid-template-columns: 1fr; gap: 1.2rem; } }
+
+/* ============================================================
+   HANDWORK SERVICE — Traditional Wear
+   ============================================================ */
+.wear-intro { max-width: 720px; margin: 0 auto 2.6rem; text-align: center; color: var(--slate); font-size: 1.02rem; }
+.handwork-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+.handwork { border-top: 2px solid var(--gold); padding: 1.6rem 0.4rem 0.2rem; }
+.handwork .hw-city { font-size: 0.66rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.7rem; display: block; }
+.handwork .hw-title { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+.handwork p { font-size: 0.92rem; color: var(--slate); line-height: 1.6; }
+.city-tag { display: inline-block; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; background: rgba(201,154,62,0.1); padding: 0.3rem 0.7rem; margin-bottom: 1rem; }
+@media (max-width: 800px) { .handwork-grid { grid-template-columns: 1fr; } .handwork { padding-top: 1.4rem; } }
+
+/* ============================================================
+   SUBTLE SERVICE FEATURES — Mehendi / assist bands
+   ============================================================ */
+.wear-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.wear-card { background: var(--cream); border: var(--hairline); padding: 2rem 1.6rem; text-align: left; }
+.wear-card .wc-icon { font-size: 1.4rem; color: var(--gold); margin-bottom: 0.9rem; }
+.wear-card h3 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+.wear-card p { font-size: 0.92rem; color: var(--slate); line-height: 1.6; }
+.wear-card .wc-tag { font-size: 0.66rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+@media (max-width: 800px) { .wear-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   HOMEPAGE EXTENDED SERVICES STRIP — subtle
+   ============================================================ */
+.extend-strip { border-top: var(--hairline); border-bottom: var(--hairline); }
+.extend-strip .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding-top: 1.4rem; padding-bottom: 1.4rem; }
+.extend-item { display: flex; align-items: center; gap: 0.7rem; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--slate); font-weight: 700; }
+.extend-item i { color: var(--gold); font-size: 1.05rem; }
+.extend-item a:hover { color: var(--navy); }
+@media (max-width: 800px) { .extend-strip .container { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .extend-strip .container { grid-template-columns: 1fr; gap: 0.6rem; } }
