@@ -586,3 +586,23 @@ a { color: inherit; text-decoration: none; }
 .journal-back { max-width: 760px; margin: 2.5rem auto 0; }
 .journal-back a { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); font-weight: 700; }
 .journal-back a:hover { color: var(--gold); }
+
+/* ============================================================
+   HOMEPAGE — RATING ROW + OUR PROMISE (trust signals)
+   ============================================================ */
+.rating-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.9rem 1.6rem; margin-top: 1.8rem; padding-top: 1.6rem; border-top: var(--hairline); }
+.rating-row .r-stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; }
+.rating-row .r-txt { font-size: 0.95rem; color: var(--slate); }
+.rating-row .r-actions a { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 2px; margin: 0 0.6rem; }
+.rating-row .r-actions a:hover { color: var(--gold); }
+.promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 1.8rem auto 0; }
+.promise-item { text-align: center; padding: 1.4rem 1rem; }
+.promise-item i { font-size: 1.6rem; color: var(--gold); }
+.promise-item strong { display: block; margin: 0.7rem 0 0.35rem; font-family: var(--font-serif); font-size: 1.15rem; color: var(--navy); }
+.promise-item p { font-size: 0.88rem; color: var(--slate); line-height: 1.6; }
+@media (max-width: 720px) { .promise-grid { grid-template-columns: 1fr; gap: 0.6rem; } }
+
+/* Map embed + see-all review link on contact */
+.map-embed iframe { display: block; }
+.g-seeall a { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: var(--gold); }
+.g-seeall a:hover { color: var(--navy); }

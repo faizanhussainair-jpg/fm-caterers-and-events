@@ -17,7 +17,7 @@ import sys
 BASE = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(BASE, 'dist')
 
-WEB_PAGES = ['index.html', 'about.html', 'services.html', 'portfolio.html', 'contact.html', 'journal.html', 'journal-awadhi-menu-ideas.html', 'journal-catering-cost-lucknow.html']
+WEB_PAGES = ['index.html', 'about.html', 'services.html', 'portfolio.html', 'contact.html', 'journal.html', 'journal-awadhi-menu-ideas.html', 'journal-catering-cost-lucknow.html', '404.html']
 STATIC_DIRS = ['assets', 'js']
 ROOT_FILES = ['sitemap.xml', 'robots.txt']
 
