@@ -22,7 +22,7 @@
       sub: 'Not just catering. An experience your guests remember.'
     },
     B: {
-      eyebrow: 'Rated 5.0 · 27 Google Reviews',
+      eyebrow: 'Rated 5.0 on Google',
       title: 'The Caterer Lucknow Trusts Since 1994',
       sub: 'Mughlai, live counters, qawwali & mehendi — one team, one standard.'
     }
