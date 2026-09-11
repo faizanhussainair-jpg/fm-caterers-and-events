@@ -19,6 +19,7 @@ DIST = os.path.join(BASE, 'dist')
 
 WEB_PAGES = ['index.html', 'about.html', 'services.html', 'portfolio.html', 'contact.html']
 STATIC_DIRS = ['assets', 'js']
+ROOT_FILES = ['sitemap.xml', 'robots.txt']
 
 # Files that must never be published, even though they sit at the project root.
 EXCLUDE = {
@@ -71,6 +72,13 @@ def main():
     if os.path.exists(toml):
         shutil.copy2(toml, os.path.join(DIST, 'netlify.toml'))
         print('  config: netlify.toml')
+
+    # 4) Copy root files required for SEO (sitemap, robots.txt).
+    for f in ROOT_FILES:
+        src = os.path.join(BASE, f)
+        if os.path.exists(src):
+            shutil.copy2(src, os.path.join(DIST, f))
+            print('  root:', f)
 
     print('\nDeploy-ready build written to:', DIST)
     print('Drag the CONTENTS of', DIST, 'into Netlify (or set it as your publish dir).')
